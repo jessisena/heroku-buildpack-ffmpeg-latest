@@ -11,7 +11,7 @@ DOWNLOAD_URL="https://www.johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
-echo "BUILD_DIR = " $BUILD_DIR
+echo "BUILD_DIR = " $BUILD_DIR | indent
 
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
@@ -24,5 +24,9 @@ echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 
-echo "PROFILE_PATH = " $PROFILE_PATH
+echo "PROFILE_PATH = " $PROFILE_PATH | indent
+
+echo "$PATH = " $PATH | indent
+echo "${HOME} = " ${HOME} | indent
+
 echo 'export PATH="$PATH:${HOME}/vendor/ffmpeg"' >> $PROFILE_PATH
